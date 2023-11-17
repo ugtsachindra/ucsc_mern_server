@@ -13,6 +13,7 @@ router.post("/", async function (req, res) {
         if (user.password === password) {
             res.status(200).json({
                 status:true,
+                message:("Login Successfull"),
                 data:{
                     user
                 }
@@ -20,14 +21,14 @@ router.post("/", async function (req, res) {
         } else {
             res.status(500).json({
                 status:false,
-                message:("wrong password")
+                message:("Wrong Password")
             });
         }
         
     } else {
         res.status(500).json({
             status:false,
-            message:("no such email")
+            message:("No such email found")
         });
     }
   } catch (error) {
